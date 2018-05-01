@@ -4,7 +4,7 @@ import WeatherCard from "./WeatherCard"
 import WeatherHourlyCard from "./WeatherHourlyCard"
 import moment from "moment";
 import UtilityFunctions from "./utilityFunctions"
-
+require('dotenv').config();
 
 class WeatherApp extends React.Component
 {
@@ -47,7 +47,7 @@ class WeatherApp extends React.Component
         })
             .then(response =>
             {
-                console.log(response);
+                console.log("Response: " , response);
                 // this.setState({result: response});
                 // console.log(`City: ${response.data.city.name}`); //name
                 // console.log(`Temperature: ${response.data.list[0].main.temp}`); //current temp
