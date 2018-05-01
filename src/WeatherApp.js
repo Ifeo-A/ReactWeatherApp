@@ -5,6 +5,7 @@ import WeatherHourlyCard from "./WeatherHourlyCard"
 import moment from "moment";
 import UtilityFunctions from "./utilityFunctions"
 
+
 class WeatherApp extends React.Component
 {
     state = {
@@ -41,7 +42,7 @@ class WeatherApp extends React.Component
                 q: `${this.state.city},${this.state.countryCode}`,
                 // cnt: 12,
                 units: "metric",
-                appid: "a64d010035e77b4fc9a9e93abb77445a"
+                appid: process.env.REACT_APP_WEATHER_API_KEY,
             }
         })
             .then(response =>
