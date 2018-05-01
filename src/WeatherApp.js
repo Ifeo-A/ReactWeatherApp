@@ -4,7 +4,7 @@ import WeatherCard from "./WeatherCard"
 import WeatherHourlyCard from "./WeatherHourlyCard"
 import moment from "moment";
 import UtilityFunctions from "./utilityFunctions"
-require('dotenv').config();
+require('dotenv').config(); //https://github.com/facebook/create-react-app/issues/865
 
 class WeatherApp extends React.Component
 {
@@ -124,4 +124,4 @@ class WeatherApp extends React.Component
 
 export default WeatherApp
 
-//setStates forces the DOM to be re-rendered everytime its called.
+//setState forces the DOM to be re-rendered everytime its called.
