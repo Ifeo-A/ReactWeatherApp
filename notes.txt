@@ -1,0 +1,20 @@
+Error "Can't resolve 'fs'":
+    ERROR in ./node_modules/dotenv/lib/main.js
+    Module not found: Error: Can't resolve 'fs' in 'K:\Documents and Files\PHPStorm_Workspace\react_weather_app\node_modules\dotenv\lib'
+
+    This error occurs because the dotenv developers have not implemented support for client side environment variables
+    link https://github.com/motdotla/dotenv/issues/224#issuecomment-327617035 a workaround is to use
+    dotenv-webpack (Link https://github.com/mrsteele/dotenv-webpack) instead as
+    suggested by Link https://github.com/motdotla/dotenv/issues/172#issuecomment-331066918
+
+For this project
+    "npm run build":
+        Will put the bundled files from the "src" folder into the "dist" folder.
+
+    "npm run start":
+        Will start the dev server and open the browser with the app loaded in. No files will be put in the
+        "dist" folder since the dev server loads all the bundled files in memory instead. This is for fast
+        hot reloading without refreshing the web page.
+
+
+

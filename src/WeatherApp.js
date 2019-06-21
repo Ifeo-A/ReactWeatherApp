@@ -4,7 +4,6 @@ import WeatherCard from "./WeatherCard"
 import WeatherHourlyCard from "./WeatherHourlyCard"
 import moment from "moment";
 import UtilityFunctions from "./utilityFunctions"
-require('dotenv').config(); //https://github.com/facebook/create-react-app/issues/865
 
 class WeatherApp extends React.Component
 {
@@ -36,7 +35,7 @@ class WeatherApp extends React.Component
     {
         //https://stackoverflow.com/questions/28974784/import-class-and-call-static-method-with-es6-modules-with-babel-transpiler
         let utilityFunctions = new UtilityFunctions();
-        let propertiesArray = [];
+        let propertiesArray  = [];
         axios.get("http://api.openweathermap.org/data/2.5/forecast", {
             params: {
                 q: `${this.state.city},${this.state.countryCode}`,
@@ -45,9 +44,8 @@ class WeatherApp extends React.Component
                 appid: process.env.REACT_APP_WEATHER_API_KEY,
             }
         })
-            .then(response =>
-            {
-                console.log("Response: " , response);
+            .then(response => {
+                console.log("Response: ", response);
                 // this.setState({result: response});
                 // console.log(`City: ${response.data.city.name}`); //name
                 // console.log(`Temperature: ${response.data.list[0].main.temp}`); //current temp
@@ -66,7 +64,7 @@ class WeatherApp extends React.Component
                      * the results at days 1,9,17,25,33 which in index notation becomes
                      * 0, 8, 16, 24, 32
                      */
-                    switch(i)
+                    switch (i)
                     {
                         case 0:
                         case 8:
@@ -89,7 +87,7 @@ class WeatherApp extends React.Component
                     }
 
                 }
-                this.setState({weatherArray: propertiesArray});
+                this.setState({ weatherArray: propertiesArray });
 
             });
 
@@ -102,8 +100,7 @@ class WeatherApp extends React.Component
         return (
             <div>
                 <div className="cards">
-                    {this.state.weatherArray.map((entry, index) =>
-                    {
+                    {this.state.weatherArray.map((entry, index) => {
                         return <WeatherCard
                             key={index}
                             dayOfWeek={entry.dayOfWeek}
